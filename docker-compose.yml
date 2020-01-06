@@ -2,8 +2,8 @@ version: '3.7'
 services:
   nginx: 
     build: 
-      context: ./Nginx
-      dockerfile: Nginx/Dockerfile
+      context: ./
+      dockerfile: nginx/Dockerfile
     #volumes:
     #  - "./nginx.conf:/etc/nginx/nginx.conf"
     container_name: prod_nginx_rp
@@ -35,7 +35,7 @@ services:
   api:
     build:
       context: ./
-      dockerfile: Node/Dockerfile
+      dockerfile: node/Dockerfile
     container_name: prod_api
     ports:
       - 3000:80

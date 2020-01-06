@@ -6,6 +6,7 @@ ENV PORT 3000
 #WORKDIR /usr/src/app
 WORKDIR /home/api
 RUN chown -R node:node /home/api
+USER node
 
 #Install dependencies app
 COPY package*.json ./

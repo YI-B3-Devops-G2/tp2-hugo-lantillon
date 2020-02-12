@@ -1,17 +1,16 @@
-FROM node:13.3-alpine
+FROM node:latest
 
-ENV PORT 3000
-
-#create app directory
-#WORKDIR /usr/src/app
-WORKDIR /home/api
-RUN chown -R node:node /home/api
+# Create app directory
+WORKDIR /home/node/app
+RUN chown -R node:node /home/node/app
 USER node
 
-#Install dependencies app
 COPY package*.json ./
 
 RUN npm install
 
+COPY . .
+
 EXPOSE 3000
+
 CMD ["npm","run","start"]
